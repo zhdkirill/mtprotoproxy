@@ -6,6 +6,9 @@ USERS = {
 #    "tg2": "0123456789abcdef0123456789abcdef",
 }
 
+# Tag for advertising, obtainable from @MTProxybot
+# AD_TAG = "3c09c680b76ee91a4c25ad51f742267d"
+
 # Enables proxy
 PROXY_PROTOCOL = True
 
@@ -17,12 +20,12 @@ SECURE_ONLY = True
 # Compatible only with the recent clients
 TLS_ONLY = True
 
+# Enables tg->client trafic reencryption, slower but more secure
+FAST_MODE = False
+
 # The domain for TLS, bad clients are proxied there
 # Use random existing domain, proxy checks it on start
 TLS_DOMAIN = "mtproxy-tls.sharik.network"
 
 # Host to mask
 MASK_HOST = "cloudflare.com"
-
-# Tag for advertising, obtainable from @MTProxybot
-# AD_TAG = "3c09c680b76ee91a4c25ad51f742267d"
