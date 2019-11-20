@@ -21,5 +21,8 @@ TLS_ONLY = True
 # Use random existing domain, proxy checks it on start
 TLS_DOMAIN = "mtproxy-tls.sharik.network"
 
+# Host to mask
+MASK_HOST = "cloudflare.com"
+
 # Tag for advertising, obtainable from @MTProxybot
 # AD_TAG = "3c09c680b76ee91a4c25ad51f742267d"

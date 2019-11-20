@@ -3,6 +3,7 @@ services:
   mtprotoproxy:
     container_name: mtproxy
     build: .
+    image: mtproxy:python
     restart: unless-stopped
     #    network_mode: "host"
     ports:
