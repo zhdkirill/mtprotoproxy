@@ -23,3 +23,9 @@ services:
       - "::1:9443:443"
       - "80:80"
     restart: unless-stopped
+  proxy:
+    image: haproxy:alpine
+    volumes:
+      - ./haproxy.cfg:/etc/haproxy/haproxy.cfg:ro
+    network_mode: "host"
+    restart: unless-stopped
