@@ -1,6 +1,7 @@
 version: '2.0'
 services:
   mtprotoproxy:
+    container_name: mtproxy
     build: .
     restart: unless-stopped
     #    network_mode: "host"
@@ -10,8 +11,8 @@ services:
     volumes:
         - ./config.py:/home/tgproxy/config.py
         - ./mtprotoproxy.py:/home/tgproxy/mtprotoproxy.py
-#    mem_limit: 1024m
   web:
+    container_name: mtproxy-web
     image: nginx:alpine
     volumes:
       - ./index.html:/var/www/index.html:ro
@@ -24,8 +25,9 @@ services:
       - "80:80"
     restart: unless-stopped
   proxy:
+    container_name: mtproxy-proxy
     image: haproxy:alpine
     volumes:
-      - ./haproxy.cfg:/etc/haproxy/haproxy.cfg:ro
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     network_mode: "host"
     restart: unless-stopped
