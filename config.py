@@ -7,7 +7,7 @@ USERS = {
 }
 
 # Tag for advertising, obtainable from @MTProxybot
-AD_TAG = "a05a158d7a04afabd59ad20246be3ed1"
+AD_TAG = "43b95e872cf645fa1c1d3229d8e71698"
 
 # Enables proxy
 PROXY_PROTOCOL = True
