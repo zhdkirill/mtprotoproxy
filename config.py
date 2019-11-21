@@ -2,12 +2,12 @@ PORT = 443
 
 # name -> secret (32 hex chars)
 USERS = {
-    "tg":  "6f27206d00f11fce53f1e9c62264dd97",
+    "tg":  "768ef18d78b681f9498e552dabda25ba",
 #    "tg2": "0123456789abcdef0123456789abcdef",
 }
 
 # Tag for advertising, obtainable from @MTProxybot
-# AD_TAG = "3c09c680b76ee91a4c25ad51f742267d"
+AD_TAG = "a05a158d7a04afabd59ad20246be3ed1"
 
 # Enables proxy
 PROXY_PROTOCOL = True
@@ -25,7 +25,8 @@ FAST_MODE = False
 
 # The domain for TLS, bad clients are proxied there
 # Use random existing domain, proxy checks it on start
-TLS_DOMAIN = "mtproxy-tls.sharik.network"
+# TLS_DOMAIN = "mtproxy-tls.sharik.network"
+TLS_DOMAIN = "cloudflare.com"
 
 # Host to mask
-MASK_HOST = "cloudflare.com"
+# MASK_HOST = "cloudflare.com"
