@@ -1,6 +1,6 @@
 version: '2.0'
 services:
-  mtprotoproxy:
+  mtproxy:
     container_name: mtproxy
     build: .
     image: mtproxy:python
