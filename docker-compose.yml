@@ -1,13 +1,10 @@
-version: '2.4'
+version: '2.3'
 services:
   mtproxy:
     container_name: mtproxy
     build: .
     image: mtproxy:python
     restart: unless-stopped
-    #ports:
-    #  - "127.0.0.1:8443:443"
-    #  - "::1:8443:443"
     volumes:
       - ./config.py:/home/tgproxy/config.py
       - ./mtprotoproxy.py:/home/tgproxy/mtprotoproxy.py
@@ -23,22 +20,24 @@ services:
       - /etc/letsencrypt/live/mtproxy-tls.sharik.network/privkey.pem:/etc/ssl/privkey.pem:ro
     networks:
       - backend
-    #ports:
-    #  - "127.0.0.1:9443:443"
-    #  - "::1:9443:443"
     restart: unless-stopped
   proxy:
     container_name: mtproxy-proxy
     image: haproxy:alpine
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    network_mode: "host"
     restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
     networks:
       - backend
 networks:
   backend:
     driver: bridge
-    #name: mtproxy
-    driver_opts:
-      enable_ipv6: true
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 2001:3200:3200::/64
+          gateway: 2001:3200:3200::1
