@@ -64,5 +64,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 2001:3200:3200::/64
+        - subnet: 2001:3200:3200::/80
           gateway: 2001:3200:3200::1
