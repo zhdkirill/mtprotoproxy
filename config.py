@@ -12,6 +12,9 @@ AD_TAG = "43b95e872cf645fa1c1d3229d8e71698"
 # Enables proxy
 PROXY_PROTOCOL = True
 
+# Force use IPv6
+PREFER_IPV6 = True
+
 # Makes the proxy harder to detect
 # Can be incompatible with very old clients
 SECURE_ONLY = True
