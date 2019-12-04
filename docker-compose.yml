@@ -39,5 +39,6 @@ services:
 networks:
   backend:
     driver: bridge
-    name: mtproxy
-    enable_ipv6: true
+    #name: mtproxy
+    driver_opts:
+      enable_ipv6: true
