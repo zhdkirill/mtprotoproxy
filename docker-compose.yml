@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.7'
 services:
   mtproxy:
     container_name: mtproxy
@@ -38,5 +38,6 @@ services:
       - backend
 networks:
   backend:
-    dirver: bridge
+    driver: bridge
     name: mtproxy
+    enable_ipv6: true
